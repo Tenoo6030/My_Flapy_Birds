@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Backgrand
+    uniqueID: 3399158517
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Overlayer
+    uniqueID: 334656991
     locked: 0
