@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
-    private const float JUMP_VELOCITY = 7f;
+    private const float JUMP_VELOCITY = 100f;
 
     private Rigidbody2D rigidbodyBird;
    
@@ -13,11 +13,6 @@ public class Bird : MonoBehaviour
     private void Awake()
     {
         rigidbodyBird = GetComponent<Rigidbody2D>();
-    }
-
-    private void Start()
-    {
-
     }
 
     private void FixedUpdate()
@@ -28,4 +23,8 @@ public class Bird : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Dead");
+    }
 }

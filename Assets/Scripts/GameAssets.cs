@@ -13,7 +13,8 @@ public class GameAssets : MonoBehaviour
         instance = this;
     }
 
-
-    public Sprite columnHeadSprite;
-    public Sprite columnBodySprite;
+    //public Sprite columnHeadSprite;
+    // public Sprite columnBodySprite; 
+    public Transform prefcColumnBody;
+    public Transform prefColumnHead;
 }
