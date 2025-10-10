@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e81a186a5111849be9f7edd1f457f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefcColumnBody: {fileID: 5484846878266942227, guid: f9b608bd5e559b049a837eadb2c3bfea, type: 3}
+  prefColumnBody: {fileID: 5484846878266942227, guid: f9b608bd5e559b049a837eadb2c3bfea, type: 3}
   prefColumnHead: {fileID: 6739811221428154975, guid: 85531f5dfe8ef3142941c7679e7f8997, type: 3}
 --- !u!1 &519420028
 GameObject:
