@@ -5,25 +5,26 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     private const float COLUMN_WIDTH = 8.6f;
-    private const float HALF_SIZE_SCREEN = 50F;
+    private const int HALF_SIZE_SCREEN = 50;
+
     // private List
 
     private void Start()
     {
-        CreatingObstacle(75f, 35f, 0);
-        CreatingObstacle(75f, 35f, 50f);
+        CreatingObstacle(25, 20f, 0);
+        CreatingObstacle(0, 20f, 50f);
 
     }
     private void CreatingObstacle(float gapY, float gapSize, float xPosition)
     {
-        float HalfGap = gapSize * 0.5f;
-        CreateColumn(gapY - HalfGap, xPosition, false);
-        CreateColumn(HALF_SIZE_SCREEN * 2f - gapY - HalfGap, xPosition, true);
+        float halfGap = gapSize * 0.5f;
+        CreateColumn(xPosition, gapY - halfGap, true);
+        CreateColumn(xPosition, gapY + halfGap, false);
+
     }
 
-    private void CreateColumn(float height, float xPosition, bool onGround)
+    private void CreateColumn(float xPosition, float yPosition, bool onGround)
     {
-        float yPosition = onGround ? -HALF_SIZE_SCREEN + height : HALF_SIZE_SCREEN - height;
 
         //Creating a column head and positioning it
         Transform columnHead = Instantiate(GameAssets.GetInstance.prefColumnHead);
@@ -35,6 +36,7 @@ public class Level : MonoBehaviour
         columnBody.position = new(xPosition, yPosition, 0);
         SpriteRenderer colmnBodySpriteRenderer = columnBody.GetComponent<SpriteRenderer>();
         columnBody.localScale = onGround ? new(1, -1, 1) : Vector3.one;
+        float height = onGround ? yPosition + HALF_SIZE_SCREEN : HALF_SIZE_SCREEN - yPosition;
         colmnBodySpriteRenderer.size = new(COLUMN_WIDTH, height);
     }
 
